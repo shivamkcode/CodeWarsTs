@@ -19,3 +19,25 @@ function humanReadable(seconds) {
       : Math.floor(seconds % 60)
   }`;
 }
+
+function humanReadable(seconds) {
+  var pad = function (x) {
+    return x < 10 ? "0" + x : x;
+  };
+  return (
+    pad(parseInt(seconds / (60 * 60))) +
+    ":" +
+    pad(parseInt((seconds / 60) % 60)) +
+    ":" +
+    pad(seconds % 60)
+  );
+}
+
+function humanReadable(seconds) {
+  return [seconds / 3600, (seconds % 3600) / 60, seconds % 60]
+    .map(function (v) {
+      v = Math.floor(v).toString();
+      return v.length == 1 ? "0" + v : v;
+    })
+    .join(":");
+}
