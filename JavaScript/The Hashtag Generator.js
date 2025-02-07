@@ -21,3 +21,11 @@ function generateHashtag(str) {
       .join("");
   return str.trim().length > 0 && hash(str).length <= 140 ? hash(str) : false;
 }
+
+function generateHashtag (str) {
+    var hash = '#';
+    str.split(' ').map(a => {
+      hash += a.charAt(0).toUpperCase() + a.slice(1);
+    });
+    return hash != '#' && hash.length <= 140 ? hash : false;
+  }
