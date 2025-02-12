@@ -32,3 +32,8 @@ function productFib(prod) {
   }
   return [a, b, a * b === prod];
 }
+
+function productFib(prod) {
+  for (let [n1, n2] = [0, 1]; n1 * n2 < prod; [n1, n2] = [n2, n1 + n2]);
+  return [n1, n2, n1 * n2 === prod];
+}
