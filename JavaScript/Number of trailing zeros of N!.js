@@ -20,3 +20,9 @@ function zeros(n) {
   }
   return count;
 }
+
+function zeros(n) {
+  var res = 0;
+  for (var i = 5; i < n; i *= 5) res += Math.floor(n / i);
+  return res;
+}
